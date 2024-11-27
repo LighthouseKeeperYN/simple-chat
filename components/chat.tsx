@@ -66,7 +66,7 @@ export default function Chat() {
       </ScrollArea>
 
       <form className='flex gap-3 mt-3' onSubmit={submitMessage}>
-        <Input onChange={(e) => setCurrentMessage(e.target.value)} />
+        <Input value={currentMessage} onChange={(e) => setCurrentMessage(e.target.value)} />
         <Button type='submit' disabled={!currentMessage}>Send</Button>
       </form>
     </Card>
