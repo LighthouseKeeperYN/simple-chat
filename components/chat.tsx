@@ -67,7 +67,7 @@ export default function Chat() {
 
       <form className='flex gap-3 mt-3' onSubmit={submitMessage}>
         <Input onChange={(e) => setCurrentMessage(e.target.value)} />
-        <Button type='submit'>Send</Button>
+        <Button type='submit' disabled={!currentMessage}>Send</Button>
       </form>
     </Card>
   );
