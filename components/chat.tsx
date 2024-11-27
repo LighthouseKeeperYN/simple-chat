@@ -53,6 +53,7 @@ export default function Chat() {
       .insert({ content: currentMessage, user_id: user.id, user_name: user.name })
 
     setCurrentMessage('')
+    fetchMessages()
   }
 
   return (
