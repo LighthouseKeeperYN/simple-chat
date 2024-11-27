@@ -31,7 +31,7 @@ export default function Chat() {
 
   useEffect(() => {
     scrollContainerRef.current?.scrollIntoView(false)
-  },[messages])
+  }, [messages])
 
   supabase
     .channel('messages')
@@ -51,6 +51,8 @@ export default function Chat() {
 
     await supabase.from('messages')
       .insert({ content: currentMessage, user_id: user.id, user_name: user.name })
+
+    setCurrentMessage('')
   }
 
   return (
