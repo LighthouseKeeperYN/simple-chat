@@ -19,5 +19,10 @@ export const signInAction = async (formData: FormData) => {
 
 export const signOutAction = async () => {
   const supabase = await createClient();
-  await supabase.auth.signOut();
+
+  try {
+    await supabase.auth.signOut();
+  } catch (error) {
+    console.error("Error signing out:", error);
+  }
 };
